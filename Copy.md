@@ -26,8 +26,21 @@ Starting to learn Typescript, MongoDB and various extensions of React (Next.js a
 
 I have a fascination with learning new things and scouring technical manuals and am ready for the dense world of web development - the future is bright.
 
+======================================
 
+2017, while working as a production manager for a food distributer, our 3rd party backend software was retired. 
 
+Two Python developers were brought in to work on a replacement, during which time, managers were given read-only database access and a handful of helpful queries to copy/paste. 
+
+I spent a weekend deepdiving SQL tutorials, inspired by our CEO who taught himself SQL in order to better parse the raw data. 
+
+I began writing client, order and inventory queries for other middle managers - albiet quite clumsily. 
+
+Soon after, I continued my self-study with Python - the language our software was being rebuilt in.
+
+2020 - present, after relocating to Montreal, I shifted my focus towards web development. Pulling in as much information as I can on CSS, Javascript and React.
+
+I'm excited to built helpful, entertaining, beautiful software.
 
 //IDEAS
 

@@ -1,5 +1,8 @@
-/* Variables */
-:root{
+/* ==============================
+Variables
+============================== */
+
+:root {
   --primary: #212121;
   --primary-light: #484848;
   --primary-dark: #000;
@@ -12,16 +15,25 @@
   --triadic-a: #7518d2;
   --triadic-b: #d21875;
 
-  --background: var(--primary-dark);
+  --background: #1A1B26;
   --text: #FFF;
   --primary: var(--primary);
   --accent: var(--secondary);
   --muted: var(--primary-light);
   --border: var(--text);
+
+  --icon-color: var(--text);
+  --icon-size: 2.6rem;
+  --icon-social: 1.3rem;
 }
 
-/* Basics */
-*, *:before, *:after {
+/* ==============================
+Basics
+============================== */
+
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -29,27 +41,46 @@ html {
   background: var(--background);
   color: var(--text);
 }
-body {
-  width: 800px;
 
-  margin: auto;
-  margin-top: 80px;
+.icon {
+  width: var(--icon-size);
+  display: inline-block;
+  margin: 0px 5px;
 }
 
-/* Typography */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Roboto:wght@100;400;500;700&family=Rubik:wght@300;400&display=swap');
+.icon-social {
+  width: var(--icon-social);
+  display: inline-block;
+  margin: 0px 0.1rem;
+}
 
-html {font-size: 120%;} /*16px*/
+/* ==============================
+Typography
+============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Roboto:wght@100;200;300;400;500;700&family=Rubik:wght@300;400&display=swap');
+
+html {
+  font-size: 120%;
+}
+
+/*16px*/
 
 body {
   font-family: 'Roboto', serif;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.75;
 }
 
-p {margin-bottom: 1rem;}
+p {
+  margin-bottom: 1rem;
+}
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 3rem 0 1.38rem;
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
@@ -57,23 +88,219 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  margin-top: 0; 
-  font-size: 2.488rem; 
+  font-size: 2.488rem;
   font-family: 'Playfair Display';
-  border-top: 1px solid var(--text); 
 }
 
-h2 {font-size: 2.074rem;}
-h3 {font-size: 1.728rem;}
-h4 {font-size: 1.44rem;}
-h5 {font-size: 1.2rem;}
-small, .text_small {font-size: 0.833rem;}
+h2 {
+  font-size: 2.074rem;
+}
 
-/* Layout */
-footer {
-  background-color: var(--primary);
+h3 {
+  font-size: 1.728rem;
+  border-top: 1px solid var(--text);
+}
+
+h4 {
+  font-size: 1.44rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+small,
+.text_small {
+  font-size: 0.833rem;
+}
+
+/* ==============================
+Layout 
+============================== */
+
+body {
+  width: 60vw;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.app>* {
+  grid-column: 1 / span 3;
+}
+
+/* ==============================
+Contact.js
+============================== */
+
+section.contact {
+  grid-row: 3;
+  grid-column: 4 / span 6;
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: repeat(2, 1.75ch);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.contact-list span {
+  grid-column: 1;
+}
+
+.contact-list a {
+  grid-column: 2 / span 4
+}
+
+a {
+  color: var(--secondary-light);
+}
+
+a:hover {
+  color: var(--analogous-a)
+}
+
+a:active {
+  color: var(--secondary-dark)
+}
+
+/* ==============================
+Header.js
+============================== */
+
+header {
+  display: grid;
+  grid-template-columns: 70fr 10fr 10fr 10fr;
+  grid-template-rows: 2fr 1fr;
+  border-top: 1px solid var(--text);
+}
+
+h1 {
+  margin: 0px;
+}
+
+.email {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.github {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.linked-in {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+header div {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+}
+
+header div svg {
+  margin-top: 50%;
+}
+
+header a:hover * {
+  fill: var(--analogous-a);
+}
+
+/* ==============================
+TechStack.js
+============================== */
+
+section.tech-stack {
+  display: grid;
+  grid-template-rows: auto;
+  place-items: center;
+  margin: 30px;
+}
+
+/* ==============================
+ProjectGrid.js
+============================== */
+
+section.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+/* ==============================
+ProjectCard.js
+============================== */
+
+div.card {
+  border: 3px dotted var(--secondary-light);
+  border-radius: 10px;
+  width: 15rem;
+  height: 25rem;
+  margin: 5px;
+  padding: 25px;
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  place-items: center;
   text-align: center;
 }
 
+div.card a {
+  background-color: var(--secondary-light);
+  color: black;
+  text-decoration: none;
+  margin: 5px;
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  border-radius: 100px;
+  place-items: center;
 
+  font-family: 'Roboto', serif;
+  font-weight: 500;
+}
 
+div.card a:hover {
+  background-color: var(--background);
+  border: 2px solid var(--text);
+  color: var(--text);
+}
+
+div.card h4 {
+  margin: 0px;
+  border-top: 5px solid var(--secondary-light);
+}
+
+div.links {
+  display: flex;
+  justify-content: center;
+}
+
+.card a.demo-link {
+  background-color: var(--analogous-a);
+}
+
+/* ==============================
+Footer.js
+============================== */
+
+footer {
+  height: 5rem;
+  border: 3px dotted var(--secondary-light);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  margin: 30px;
+}
+
+/* ==============================
++++
+============================== */
+/* ==============================
++++
+============================== */
